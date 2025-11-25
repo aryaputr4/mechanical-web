@@ -1,0 +1,106 @@
+/* Pengaturan dasar */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* 
+  --- STYLING UNTUK VIDEO LATAR BELAKANG ---
+  Ini adalah bagian terpenting.
+*/
+#background-video {
+    position: fixed; /* Memastikan video tetap di tempatnya */
+    right: 0;
+    bottom: 0;
+    min-width: 100%; /* Memastikan video menutupi lebar layar */
+    min-height: 100%; /* Memastikan video menutupi tinggi layar */
+    z-index: -1; /* Meletakkan video di lapisan paling BELAKANG */
+    object-fit: cover; /* Seperti background-size: cover, agar video tidak penyok */
+    filter: brightness(0.7); /* Opsional: membuat video sedikit lebih gelap agar teks lebih mudah dibaca */
+}
+
+/* Kontainer utama untuk menengahkan kotak login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* Menambahkan background transparan untuk berjaga-jaga jika video gagal dimuat */
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* (Sisa kode CSS lainnya tetap sama persis seperti sebelumnya) */
+
+.login-box {
+    max-width: 450px;
+    width: 90%;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    border: 2px solid #00e5ff;
+    box-shadow: 0 0 15px #00e5ff, 0 0 30px #00e5ff, 0 0 45px #ff00c1;
+    text-align: center;
+    animation: floatAnimation 6s ease-in-out infinite;
+}
+
+.login-box h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #00e5ff;
+    text-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00e5ff;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Orbitron', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #ccc;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ff00c1;
+    box-shadow: 0 0 10px #ff00c1;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    background: linear-gradient(90deg, #00e5ff, #ff00c1);
+    transition: box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+    box-shadow: 0 0 15px #00e5ff, 0 0 20px #ff00c1;
+}
+
+@keyframes floatAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
